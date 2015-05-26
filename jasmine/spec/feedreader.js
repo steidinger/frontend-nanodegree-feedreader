@@ -48,7 +48,10 @@ $(function() {
         });
     });
 
-
+    /*
+     * This suite tests the behaviour of the menu. It should be hidden initially
+     * and appear / disappear whenever the menu icon is clicked.
+     */
     describe('The menu', function () {
         /*
          * The menu is hidden using CSS translate. If the body has the class
@@ -74,6 +77,9 @@ $(function() {
         });
     });
 
+    /*
+     * This suite tests the asynchronous loading of the RSS feed entries.
+     */
     describe('Intial Entries', function () {
 
         /*
@@ -95,6 +101,9 @@ $(function() {
         });
     });
 
+    /*
+     * This suite checks that switching to another feed loads a new set of feed entries.
+     */
     describe('New Feed Selection', function () {
         var initialTitles = [];
 
