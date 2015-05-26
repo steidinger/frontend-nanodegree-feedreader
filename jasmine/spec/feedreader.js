@@ -27,18 +27,18 @@ $(function() {
         });
 
 
-		/* Each feed in the allFeeds object should have a URL
-		 * and that URL should not be empty.
+        /* Each feed in the allFeeds object should have a URL
+         * and that URL should not be empty.
          */
-		it('have a URL', function () {
+        it('have a URL', function () {
             allFeeds.forEach(function (feed) {
                 expect(feed.url).toBeDefined();
                 expect(feed.url).not.toBe('');
             });
         });
 
-		/* Each feed in the allFeeds object should have a name
-		 * and that name should not be empty.
+        /* Each feed in the allFeeds object should have a name
+         * and that name should not be empty.
          */
         it('have a name', function () {
             allFeeds.forEach(function (feed) {
@@ -76,19 +76,19 @@ $(function() {
 
     describe('Intial Entries', function () {
 
-		/*
-		 * wait until loadFeed is finished before starting the actual test
-		 */
+        /*
+         * wait until loadFeed is finished before starting the actual test
+         */
         beforeEach(function (done) {
             loadFeed(0, function () {
                 done();
             });
         });
 
-		/*
-		 * check that at least one feed entry is displayed. The content of the
-		 * entry is ignored since its value cannot be predicted.
-		 */
+        /*
+         * check that at least one feed entry is displayed. The content of the
+         * entry is ignored since its value cannot be predicted.
+         */
         it('should contain at least one entry', function (done) {
             expect(document.querySelectorAll('.feed .entry').length).toBeGreaterThan(0);
             done();
@@ -98,9 +98,9 @@ $(function() {
     describe('New Feed Selection', function () {
         var initialTitles = [];
 
-		/*
-		 * Return the titles of the currently loaded feed entries.
-		 */
+        /*
+         * Return the titles of the currently loaded feed entries.
+         */
         function getTitles() {
             var entries = document.querySelectorAll('.feed .entry h2');
             entries = Array.prototype.slice.call(entries);
@@ -109,11 +109,11 @@ $(function() {
             });
         }
 
-		/*
-		 * To be able to check if loadFeed replaces the feed entries, I load
-		 * two feeds and store the entries returned by the first call. The
-		 * actual test method can then compare the results of both calls.
-		 */
+        /*
+         * To be able to check if loadFeed replaces the feed entries, I load
+         * two feeds and store the entries returned by the first call. The
+         * actual test method can then compare the results of both calls.
+         */
         beforeEach(function (done) {
             loadFeed(0, function () {
                 // remember titles of entries loaded by first feed
@@ -125,9 +125,9 @@ $(function() {
             });
         });
 
-		/*
-		 * Test that loading a new feed results in new feed entries.
-		 */
+        /*
+         * Test that loading a new feed results in new feed entries.
+         */
         it('should load new entries', function (done) {
             expect(getTitles()).not.toEqual(initialTitles);
             done();
